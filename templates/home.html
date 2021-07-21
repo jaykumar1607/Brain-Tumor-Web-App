@@ -1,0 +1,10 @@
+<h1>FLASK APP RUNNING</h1>
+<h2>Please enter your image below:</h2>
+<form  method="POST" enctype="multipart/form-data">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+
+    <p>{{form.image.label}} &emsp; {{form.image}}</p>
+    <br>
+    {{ form.submit() }}
+</form>
