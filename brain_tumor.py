@@ -12,7 +12,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY']='jaykumar'
 
 class BrainForm(FlaskForm):
-    image = FileField("Enter Image",validators=[file_required(),file_allowed(['jpg','png','jpeg'],'Images Only!')])
+    style={'class': 'form-control', 'style':'width:25%;'}
+    image = FileField("",validators=[file_required(),file_allowed(['jpg','png','jpeg'],'Images Only!')],render_kw=style)
     submit = SubmitField("Analyze")
 
 model = load_model('brain_tumor.h5')

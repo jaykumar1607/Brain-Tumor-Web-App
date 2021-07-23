@@ -1,10 +1,33 @@
-<h1>FLASK APP RUNNING</h1>
-<h2>Please enter your image below:</h2>
-<form  method="POST" enctype="multipart/form-data">
-    {# This hidden_tag is a CSRF security feature. #}
-    {{ form.hidden_tag() }}
+{% extends 'base.html' %}
 
-    <p>{{form.image.label}} &emsp; {{form.image}}</p>
-    <br>
-    {{ form.submit() }}
-</form>
+{% block content %}
+<center><img src="../static/brain_logo.png" class="img-fluid" alt="logo">
+<br/>
+<figure class="text-center">
+  <blockquote class="blockquote">
+    <p class='lead'>The human brain is probably one of the most complex single<br> objects on the face of the earth; I think it is, quite honestly.</p>
+  </blockquote>
+  <br>
+  <figcaption class="blockquote-footer">
+    <cite title="Source Title">Bill Viola</cite>
+  </figcaption>
+</figure>
+  <br/>
+  <form  method="POST" enctype="multipart/form-data"><center>
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+
+      {{form.image}}
+      <br/>
+      <br/>
+      <input class="btn btn-outline-primary" type="submit" value="Enter">
+      <br/>
+  </form>
+<br/>
+<br/>
+<br/>
+<br/>
+<footer>
+<center>Made with ❤️ by Jay Kumar
+</footer>
+{% endblock %}
