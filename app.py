@@ -14,7 +14,7 @@ app.config['SECRET_KEY']='jaykumar'
 class BrainForm(FlaskForm):
     style={'class': 'form-control', 'style':'width:25%;'}
     image = FileField("",validators=[file_required(),file_allowed(['jpg','png','jpeg'],'Images Only!')],render_kw=style)
-    submit = SubmitField("Analyze")
+    submit = SubmitField("Analyze",render_kw={'class':'btn btn-outline-primary'})
 
 model = load_model('brain_tumor.h5')
 
