@@ -41,7 +41,7 @@ def index():
 
     if form.validate_on_submit():
 
-        assets_dir = 'assets'
+        assets_dir = './assets'
         img = form.image.data
         img_name = secure_filename(img.filename)
 
@@ -58,6 +58,7 @@ def prediction():
 
     pred_val = predict(model,x)
     result = tumor_name(pred_val)
+    os.remove(x)
     return render_template('prediction.html',result=result)
 
 @app.route('/brain_tumor')
