@@ -1,8 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-  <h1><center>Thank You.<br> Here is your result:</h1>
-  <h2><center>{{result}}</h2>
+</br>
+<h2 class="lead"><center>Thank You for using our service!</h2>
+<br/>
+<br/>
+<br/>
+<h2 class="lead"><center>Here is your 🧠 Tumor report!</h2>
+<br/>
+<br/>
+<br/>
+<table class="table table-hover" style="width:25%; margin-left:auto; margin-right:auto;">
+  <tbody>
+    <tr class="table-dark">
+      <th scope="row">RESULT</th>
+      <td>{{result}}</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+<br/>
+<p><center>Here is some more information which might help you:</center></p>
+<br/>
+<br/>
+<br/>
+{% if 'Meningioma Tumor' in result %}
+  <center>{% include 'menin.html' %}</center>
+{% elif 'Glioma Tumor' in result %}
+  <center>{% include 'glioma.html' %}</center>
+{% elif 'Pituitary Tumor' in result %}
+  <center>{% include 'pit.html' %}</center>
+{% elif 'No Tumor Found' in result %}
+  {% include 'no_tumor.html' %}
+{% endif %}
 
 {% endblock%}

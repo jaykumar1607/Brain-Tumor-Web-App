@@ -61,5 +61,13 @@ def prediction():
     os.remove(x)
     return render_template('prediction.html',result=result)
 
+@app.route('/brain_tumor')
+def what():
+    return render_template('what.html')
+
+@app.route('/about_me')
+def me():
+    return render_template('about_me.html')
+
 if __name__=='__main__':
     app.run()
