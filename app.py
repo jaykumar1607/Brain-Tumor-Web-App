@@ -58,7 +58,6 @@ def prediction():
 
     pred_val = predict(model,x)
     result = tumor_name(pred_val)
-    os.remove(x)
     return render_template('prediction.html',result=result)
 
 @app.route('/brain_tumor')
