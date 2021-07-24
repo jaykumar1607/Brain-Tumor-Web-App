@@ -5,7 +5,7 @@ cachetools==4.2.2
 certifi==2021.5.30
 charset-normalizer==2.0.3
 click==8.0.1
-Flask==2.0.1
+Flask==1.1.2
 Flask-WTF==0.15.1
 flatbuffers==1.12
 gast==0.3.3
